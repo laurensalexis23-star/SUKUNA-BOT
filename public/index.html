@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black;color:white;text-align:center;">
+<h1>Pair Code</h1>
+<h2 id="code">Loading...</h2>
+<script>
+setInterval(async ()=>{
+let r = await fetch('/pair');
+let d = await r.json();
+document.getElementById('code').innerText = d.code || "WAIT...";
+},2000);
+</script>
+</body>
+</html>
